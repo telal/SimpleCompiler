@@ -5,15 +5,10 @@ import ru.telal.compiler.visitor.Visitor
 
 open class ParserRuleContext : ParseTree {
 
-    private var parent: ParseTree? = null
+    override var parent: ParseTree? = null
 
     private val children = mutableListOf<ParseTree>()
 
-    override fun getParent(): ParseTree? = parent
-
-    override fun setParent(parent: ParseTree?) {
-        this.parent = parent
-    }
 
     override fun getText(): String? {
         if (getChildCount() == 0) return ""
@@ -27,7 +22,7 @@ open class ParserRuleContext : ParseTree {
     override fun getPayload(): Any? = this
 
     override fun addChild(child: ParseTree?) {
-        child?.setParent(this)
+        child?.parent = this
         child?.let { children.add(it) }
     }
 
@@ -57,5 +52,5 @@ open class ParserRuleContext : ParseTree {
         return sb.toString()
     }
 
-    override fun <T> accept(visitor: Visitor<out T>): T? = null
+    override fun <T> accept(visitor: Visitor<T>): T? = null
 }

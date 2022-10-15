@@ -10,13 +10,11 @@ class ShowContext(
 
     init {
         if (integerValue != null) {
-            this.addChild(integerValue);
+            this.addChild(integerValue)
         } else {
-            this.addChild(variableName);
+            this.addChild(variableName)
         }
     }
 
-    override fun <T> accept(visitor: Visitor<out T>): T {
-        return visitor.visitShow(this)
-    }
+    override fun <T> accept(visitor: Visitor<T>): T? = visitor.visitShow(this)
 }

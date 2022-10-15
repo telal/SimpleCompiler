@@ -9,11 +9,9 @@ class LetContext(
 ) : ParserRuleContext() {
 
     init {
-        addChild(variableName);
-        addChild(variableValue);
+        addChild(variableName)
+        addChild(variableValue)
     }
 
-    override fun <T> accept(visitor: Visitor<out T>): T {
-        return visitor.visitLet(this)
-    }
+    override fun <T> accept(visitor: Visitor<T>): T? = visitor.visitLet(this)
 }

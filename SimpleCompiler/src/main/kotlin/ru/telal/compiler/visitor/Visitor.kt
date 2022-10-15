@@ -8,13 +8,13 @@ import ru.telal.compiler.nodes.grammer.StatementContext
 
 interface Visitor<T> {
 
-    fun visitProgram(context: ProgramContext?): T
+    fun visitProgram(context: ProgramContext): T?
 
-    fun visitStatement(context: StatementContext?): T
+    fun visitStatement(context: StatementContext): T?
 
-    fun visitLet(context: LetContext?): T
+    fun visitLet(context: LetContext): T?
 
-    fun visitShow(context: ShowContext?): T
+    fun visitShow(context: ShowContext): T?
 
-    fun visitTerminal(context: TerminalNode?): T
+    fun visitTerminal(context: TerminalNode): T?
 }

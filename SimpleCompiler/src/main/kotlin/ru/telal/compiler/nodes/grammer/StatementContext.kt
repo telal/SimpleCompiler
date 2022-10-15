@@ -9,13 +9,11 @@ class StatementContext(
 
     init {
         if (letContext != null) {
-            this.addChild(letContext);
+            this.addChild(letContext)
         } else {
-            this.addChild(showContext);
+            this.addChild(showContext)
         }
     }
 
-    override fun <T> accept(visitor: Visitor<out T>): T {
-        return visitor.visitStatement(this)
-    }
+    override fun <T> accept(visitor: Visitor<T>): T? = visitor.visitStatement(this)
 }

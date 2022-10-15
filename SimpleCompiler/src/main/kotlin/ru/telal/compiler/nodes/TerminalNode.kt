@@ -8,13 +8,7 @@ class TerminalNode : ParseTree {
 
     var symbol: Token? = null
 
-    private var parent: ParseTree? = null
-
-    override fun getParent(): ParseTree? = parent
-
-    override fun setParent(parent: ParseTree?) {
-        this.parent = parent
-    }
+    override var parent: ParseTree? = null
 
     override fun getText(): String? = symbol?.value
 
@@ -28,7 +22,5 @@ class TerminalNode : ParseTree {
 
     override fun toStringTree(): String? = getText()
 
-    override fun <T> accept(visitor: Visitor<out T>): T? {
-        return visitor.visitTerminal(this)
-    }
+    override fun <T> accept(visitor: Visitor<T>): T? = visitor.visitTerminal(this)
 }

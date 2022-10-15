@@ -4,9 +4,7 @@ import ru.telal.compiler.visitor.Visitable
 
 interface ParseTree : Visitable {
 
-    fun getParent(): ParseTree?
-
-    fun setParent(parent: ParseTree?)
+    var parent: ParseTree?
 
     fun getText(): String?
 
