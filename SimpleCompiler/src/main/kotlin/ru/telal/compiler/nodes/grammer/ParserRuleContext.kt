@@ -26,9 +26,9 @@ open class ParserRuleContext : ParseTree {
 
     override fun getPayload(): Any? = this
 
-    override fun addChild(child: ParseTree) {
-        child.setParent(this)
-        children.add(child)
+    override fun addChild(child: ParseTree?) {
+        child?.setParent(this)
+        child?.let { children.add(it) }
     }
 
     override fun getChild(i: Int): ParseTree {

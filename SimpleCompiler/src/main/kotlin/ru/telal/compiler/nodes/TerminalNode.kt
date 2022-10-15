@@ -20,7 +20,7 @@ class TerminalNode : ParseTree {
 
     override fun getPayload(): Any? = symbol
 
-    override fun addChild(child: ParseTree) {}
+    override fun addChild(child: ParseTree?) {}
 
     override fun getChild(i: Int): ParseTree? = null
 
