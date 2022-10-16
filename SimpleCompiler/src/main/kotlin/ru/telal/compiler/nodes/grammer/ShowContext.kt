@@ -5,7 +5,7 @@ import ru.telal.compiler.visitor.Visitor
 
 class ShowContext(
     val integerValue: TerminalNode?,
-    val variableName: TerminalNode?
+    val variableName: TerminalNode
 ) : ParserRuleContext() {
 
     init {
