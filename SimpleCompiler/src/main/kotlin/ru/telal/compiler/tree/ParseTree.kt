@@ -12,7 +12,7 @@ interface ParseTree : Visitable {
 
     fun getPayload(): Any?
 
-    fun addChild(child: ParseTree)
+    fun addChild(child: ParseTree?)
 
     fun getChild(i: Int): ParseTree?
 

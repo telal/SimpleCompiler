@@ -4,7 +4,7 @@ import ru.telal.compiler.visitor.Visitor
 
 class StatementContext(
     val letContext: LetContext?,
-    val showContext: ShowContext
+    val showContext: ShowContext?
 ) : ParserRuleContext() {
 
     init {
