@@ -1,0 +1,5 @@
+i = 1
+show i
+a = 5
+show a
+show 10

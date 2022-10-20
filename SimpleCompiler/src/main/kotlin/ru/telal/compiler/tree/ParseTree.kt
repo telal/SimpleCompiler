@@ -6,7 +6,7 @@ interface ParseTree : Visitable {
 
     var parent: ParseTree?
 
-    fun getText(): String?
+    fun getText(): String
 
     fun getPayload(): Any?
 

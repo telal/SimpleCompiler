@@ -10,7 +10,7 @@ class TerminalNode : ParseTree {
 
     override var parent: ParseTree? = null
 
-    override fun getText(): String? = symbol?.value
+    override fun getText(): String = symbol?.value ?: ""
 
     override fun getPayload(): Any? = symbol
 

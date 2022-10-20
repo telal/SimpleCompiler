@@ -10,7 +10,7 @@ open class ParserRuleContext : ParseTree {
     private val children = mutableListOf<ParseTree>()
 
 
-    override fun getText(): String? {
+    override fun getText(): String {
         if (getChildCount() == 0) return ""
         val builder = StringBuilder()
         for (i in 0 until getChildCount()) {
